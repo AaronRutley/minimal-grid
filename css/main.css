@@ -1,0 +1,93 @@
+/*--------------------------------------------------------------
+Import
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Reset
+--------------------------------------------------------------*/
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+/*--------------------------------------------------------------
+Variables
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Breakpoints
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Clearfix
+--------------------------------------------------------------*/
+.example-grid-row:after, .sematnic-row-name-here .container:after, .common-block-row .container:after, .common-block-row:after { content: ""; display: table; clear: both; }
+
+/*--------------------------------------------------------------
+Grid
+--------------------------------------------------------------*/
+.example-grid-row, .sematnic-row-name-here .container, .common-block-row .container { clear: both; max-width: 1200px; margin: 0 auto; }
+.example-grid-row section, .sematnic-row-name-here .container section, .common-block-row .container section { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
+
+/*--------------------------------------------------------------
+highlight grid
+--------------------------------------------------------------*/
+p { background: #c5c5c5; color: #222; text-align: center; line-height: 40px; }
+
+/*--------------------------------------------------------------
+Example semantic row
+--------------------------------------------------------------*/
+.example-grid-row section { margin: 5px 0; }
+.example-grid-row .classes { width: 60%; }
+@media (min-width: 550px) { .example-grid-row .classes { width: 10%; } }
+.example-grid-row .can { width: 40%; }
+@media (min-width: 550px) { .example-grid-row .can { width: 90%; } }
+.example-grid-row .be { width: 40%; }
+@media (min-width: 550px) { .example-grid-row .be { width: 20%; } }
+.example-grid-row .responsive { width: 60%; }
+@media (min-width: 550px) { .example-grid-row .responsive { width: 80%; } }
+.example-grid-row .and { width: 60%; }
+@media (min-width: 550px) { .example-grid-row .and { width: 30%; } }
+.example-grid-row .semantic { width: 40%; }
+@media (min-width: 550px) { .example-grid-row .semantic { width: 70%; } }
+.example-grid-row .very-class { width: 40%; }
+@media (min-width: 550px) { .example-grid-row .very-class { width: 40%; } }
+.example-grid-row .much-wow { width: 60%; }
+@media (min-width: 550px) { .example-grid-row .much-wow { width: 60%; } }
+.example-grid-row .so-responsive { width: 50%; }
+@media (min-width: 550px) { .example-grid-row .so-responsive { width: 50%; } }
+.example-grid-row .such-semantic { width: 50%; }
+@media (min-width: 550px) { .example-grid-row .such-semantic { width: 50%; } }
+.example-grid-row .many-options { width: 100%; }
+@media (max-width: 550px) { .example-grid-row .many-options { padding: 0; } }
+@media (min-width: 550px) { .example-grid-row .many-options { width: 100%; } }
+
+/*--------------------------------------------------------------
+sematnic-row-name-here
+--------------------------------------------------------------*/
+.sematnic-row-name-here { background: #f1f1f1; margin: 20px 0; }
+.sematnic-row-name-here .container { background: #CCC; max-width: 1100px; }
+.sematnic-row-name-here .content-col { width: 100%; border: 1px solid #CCC; }
+@media (min-width: 550px) { .sematnic-row-name-here .content-col { width: 60%; } }
+@media (min-width: 1200px) { .sematnic-row-name-here .content-col { width: 70%; } }
+.sematnic-row-name-here .sidebar { width: 100%; border: 1px solid #CCC; }
+@media (min-width: 550px) { .sematnic-row-name-here .sidebar { width: 40%; } }
+@media (min-width: 1200px) { .sematnic-row-name-here .sidebar { width: 30%; } }
+
+/*--------------------------------------------------------------
+common-block-row
+--------------------------------------------------------------*/
+.common-block-row { padding: 5px 0; clear: both; }
+.common-block-row .container { max-width: 1280px; }
+.common-block-row .container section { margin: 5px 0; border: 1px solid #CCC; }
+.common-block-row .promo { width: 50%; margin: 5px 0; }
+@media (min-width: 550px) { .common-block-row .promo { width: 33.33%; } }
+@media (min-width: 1200px) { .common-block-row .promo { width: 16.66%; } }
