@@ -1,11 +1,15 @@
 # Minimal Grid
 > This is a work in progress & pull requests welcome !
 
+
 ## Why another grid system ?
 * Percentage based (50% instead of span_6)
 * Breakpoint based ('medium' instead of 'tablet')
 * Sass based (no more ugly classs in your html)
 * Easy to extend or customise per project
+
+### Example
+[Check out an example](http://htmlpreview.github.io/?https://github.com/AaronRutley/minimal-grid/blob/master/index.html)
 
 ## How to
 Let's say you have 6 'promos' to show on a page,
