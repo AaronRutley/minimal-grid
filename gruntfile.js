@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         compass: {
             dist: {
                 options: {
-                    sassDir: 'stylesheets',
+                    sassDir: 'sass',
                     cssDir: 'css',
                     imagesDir: 'images',
                     images: 'images',
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
                   }
                 },
                 css: {
-                  files: ['stylesheets/*.scss'],
+                  files: ['sass/*.scss'],
                   tasks: ['compass'],
                 }
         }
