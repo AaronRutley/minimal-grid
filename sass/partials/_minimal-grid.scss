@@ -1,35 +1,27 @@
 /*--------------------------------------------------------------
-Minimal Grid
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-Border Box
---------------------------------------------------------------*/
-*, *:before, *:after {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-/*--------------------------------------------------------------
-Container extend
+Grid Container
+eg: @extend %grid-container;
 --------------------------------------------------------------*/
 %grid-container {
     clear: both;
     max-width: $minimal-grid-container-max-width;
     margin: 0 auto;
     @extend %clearfix;
+}
 
-    section {
-            padding-left:($minimal-grid-gutter-width/2);
-            padding-right:($minimal-grid-gutter-width/2);
-            display: inline-block;
-            float: left;
-    }
+/*--------------------------------------------------------------
+Grid Block
+--------------------------------------------------------------*/
+%grid-block {
+    padding-left:($minimal-grid-gutter-width/2);
+    padding-right:($minimal-grid-gutter-width/2);
+    display: inline-block;
+    float: left;
 }
 
 /*--------------------------------------------------------------
 Grid Mixin
+eg: @include grid(33); for 33.33%
 --------------------------------------------------------------*/
 @mixin grid($percentage) {
     @if $percentage == 10 { width:10%; }
@@ -53,6 +45,8 @@ Grid Mixin
     @else if $percentage == 90 {width:90%;}
     @else if $percentage == 95 {width:95%;}
     @else if $percentage == 100 {width:100%;}
+    @else {width:$percentage*1%;}
+    @extend %grid-block;
 }
 
 /*--------------------------------------------------------------

@@ -14,78 +14,171 @@ Imports
 @import "partials/minimal-grid";
 
 /*--------------------------------------------------------------
+example page layout
+--------------------------------------------------------------*/
+.your-wrapper-here {
+    background: #f1f1f1;
+
+    .your-container-here {
+    @extend %grid-container;
+    }
+    .content-col {
+        @include grid(100);
+        @include breakpoint(from-small) {
+            @include grid(50);
+        }
+        @include breakpoint(from-medium) {
+            @include grid(70);
+        }
+    }
+    .sidebar {
+        @include grid(100);
+        @include breakpoint(from-small) {
+            @include grid(50);
+        }
+        @include breakpoint(from-medium) {
+            @include grid(30);
+        }
+    }
+}
+
+/*--------------------------------------------------------------
 Example semantic row
 --------------------------------------------------------------*/
 .your-container-class-here {
     @extend %grid-container;
 
     .classes {
-        @include grid(60);
+        @include grid(30);
+        :after { content: "30%"; }
+        @include breakpoint(from-small) {
+            @include grid(20);
+            :after { content: "20%"; }
+        }
         @include breakpoint(from-medium) {
             @include grid(10);
+            :after { content: "10%"; }
         }
     }
 
     .can {
-        @include grid(40);
+        @include grid(70);
+        :after { content: "70%"; }
+        @include breakpoint(from-small) {
+            @include grid(80);
+            :after { content: "80%"; }
+        }
         @include breakpoint(from-medium) {
             @include grid(90);
+            :after { content: "90%"; }
         }
     }
 
     .be {
-        @include grid(40);
+        @include grid(100);
+        :after { content: "100%"; }
         @include breakpoint(from-medium) {
             @include grid(20);
+            :after { content: "20%"; }
         }
     }
     .responsive {
-        @include grid(60);
+        @include grid(100);
+        :after { content: "100%"; }
         @include breakpoint(from-medium) {
             @include grid(80);
+            :after { content: "80%"; }
         }
     }
     .and {
         @include grid(60);
+        :after { content: "60%"; }
         @include breakpoint(from-medium) {
             @include grid(30);
+            :after { content: "30%"; }
         }
     }
     .semantic {
         @include grid(40);
+        :after { content: "40%"; }
         @include breakpoint(from-medium) {
             @include grid(70);
+            :after { content: "70%"; }
         }
     }
     .very-class {
         @include grid(40);
+        :after { content: "40%"; }
         @include breakpoint(from-medium) {
             @include grid(40);
+            :after { content: "40%"; }
         }
     }
     .much-wow {
         @include grid(60);
+        :after { content: "60%"; }
         @include breakpoint(from-medium) {
             @include grid(60);
+            :after { content: "60%"; }
         }
     }
     .so-responsive {
         @include grid(50);
+        :after { content: "50%"; }
         @include breakpoint(from-medium) {
             @include grid(50);
+            :after { content: "50%"; }
         }
     }
     .such-semantic {
         @include grid(50);
+        :after { content: "50%"; }
         @include breakpoint(from-medium) {
             @include grid(50);
+            :after { content: "50%"; }
         }
     }
     .many-options {
         @include grid(100);
+        :after { content: "100%"; }
     }
+
     .im-one-thid {
         @include grid(33);
+        :after { content: "33%"; }
+    }
+
+    .im-15 {
+         @include grid(15);
+        :after { content: "15%"; }
+    }
+    .im-85 {
+         @include grid(85);
+        :after { content: "85%"; }
+    }
+    .im-25 {
+         @include grid(25);
+        :after { content: "25%"; }
+    }
+    .im-75 {
+         @include grid(75);
+        :after { content: "75%"; }
+    }
+    .im-35 {
+         @include grid(35);
+        :after { content: "35%"; }
+    }
+    .im-65 {
+         @include grid(65);
+        :after { content: "65%"; }
+    }
+    .im-45 {
+         @include grid(45);
+        :after { content: "45%"; }
+    }
+    .im-55 {
+         @include grid(55);
+        :after { content: "55%"; }
     }
 
 }
@@ -97,48 +190,43 @@ promo examples
     @extend %grid-container;
     .promo {
         @include grid(50);
+        :after { content: "50%"; }
         @include breakpoint(from-medium) {
             @include grid(33);
+            :after { content: "33.33%"; }
         }
         @include breakpoint(from-large) {
             @include grid(16);
+            :after { content: "16.66%"; }
         }
     }
 }
-/*--------------------------------------------------------------
-example page layout
---------------------------------------------------------------*/
-.your-wrapper-here {
-    background: #f1f1f1;
 
-    .your-container-here {
-      @extend %grid-container;
-    }
-    .content-col {
-        @include grid(100);
-        @include breakpoint(from-small) {
-            @include grid(60);
-        }
-        @include breakpoint(from-medium) {
-            @include grid(75);
-        }
-    }
-    .sidebar {
-        @include grid(100);
-        @include breakpoint(from-small) {
-            @include grid(40);
-        }
-        @include breakpoint(from-medium) {
-            @include grid(25);
-        }
-    }
-}
 
 /*--------------------------------------------------------------
 styles just for the demo
 --------------------------------------------------------------*/
+.title {
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    line-height: 20px;
+    margin-top: 10px;
+}
+.title:after {
+    content: "mobile frist ";
+    @include breakpoint(from-small) {
+        content: " bigger than small breakpoint";
+    }
+    @include breakpoint(from-medium) {
+        content: " bigger than medium breakpoint";
+    }
+    @include breakpoint(from-large) {
+        content: "bigger than large breakpoint";
+    }
+}
 p {
-    background: #c5c5c5;
+    background: #e5e5e5;
     color: #555;
     text-align: center;
     line-height: 40px;
@@ -174,19 +262,3 @@ p {
     line-height: 20px;
     color: #777;
  }
-
-span.small {
-    @include breakpoint(to-small) {
-    display: block;
-    }
-}
-span.medium {
-    @include breakpoint(from-small-to-medium) {
-    display: block;
-    }
-}
-span.large {
-    @include breakpoint(from-medium) {
-    display: block;
-    }
-}
