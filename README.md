@@ -12,11 +12,6 @@
 
 ### How to use in your next project
 1. Download / clone this repo
-
-    ```
-    Code
-    More Code
-    ```
 2. Import the Minimal Grid (as a partial) eg:
 
     ```sass
