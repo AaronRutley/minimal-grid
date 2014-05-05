@@ -14,7 +14,7 @@
 1. Download / clone this repo
 2. Import the Minimal Grid (as a partial) eg:
 
-    ```sass
+    ```scss
     @import "partials/minimal-grid";
     ```
 3. Set your breakpoints (pixel values are converted to ems)
@@ -42,7 +42,7 @@ you could write some HTML like this:
 5. Write your Sass
 Lets say you want these promos to be 50% on a small screen, 33.33% on a medium screen and then 16.66% on a large screen. You could achive that with minimal-grid and some Sass like this:
 
-    ``` sass
+    ``` scss
 .promo-container {
     @extend %grid-container;
     .promo {
