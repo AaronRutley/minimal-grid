@@ -1,12 +1,8 @@
-/*--------------------------------------------------------------
-Imports
---------------------------------------------------------------*/
+// Imports
 @import "partials/reset";
 @import "partials/minimal-grid";
 
-/*--------------------------------------------------------------
-Project sepecific / Design / Content Based Breakpoints to overwrite defaults
---------------------------------------------------------------*/
+// Project sepecific / Design / Content Based Breakpoints to overwrite defaults
 $breakpoint-small:  em(410);
 $breakpoint-medium: em(800);
 $breakpoint-large:  em(1200);
