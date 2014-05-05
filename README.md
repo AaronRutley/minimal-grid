@@ -58,5 +58,4 @@ Lets say you want these promos to be 50% on a small screen, 33.33% on a medium s
  ```
 
 6. That's it !
-
-**This is very much a work in progress & pull requests welcome **
+** This is very much a work in progress & pull requests welcome **
