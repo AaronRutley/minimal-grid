@@ -10,7 +10,7 @@
 ### Example
 [Check out an example](http://htmlpreview.github.io/?https://github.com/AaronRutley/minimal-grid/blob/master/index.html)
 
-### How to use in your next project
+### How to use
 1. Download / clone this repo
 2. Import the Minimal Grid (as a partial) eg:
 
@@ -59,4 +59,4 @@ Lets say you want these promos to be 50% on a small screen, 33.33% on a medium s
 
 6. That's it !
 
-**This is very much a work in progress & pull requests welcome !**
+**This is very much a work in progress & pull requests welcome **
