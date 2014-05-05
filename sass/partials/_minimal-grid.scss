@@ -46,6 +46,17 @@ Grid Block
 }
 
 /*--------------------------------------------------------------
+Clearfix
+--------------------------------------------------------------*/
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/*--------------------------------------------------------------
 Grid Mixin
 --------------------------------------------------------------*/
 @mixin grid($percentage) {
@@ -104,15 +115,4 @@ Breakpoint Mixin
     @else if $point == from-xlarge {
         @media only screen and (min-width: $breakpoint-xlarge) { @content; }
     }
-}
-
-/*--------------------------------------------------------------
-Clearfix Extend
---------------------------------------------------------------*/
-%clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
 }
