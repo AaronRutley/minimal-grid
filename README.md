@@ -29,21 +29,21 @@
 
     Let's say you have 6 'promos' to show on a page, you could write some HTML like this:
 
-        ```html
-        <section class="promo-container">
-            <section class="promo"><p>promo</p></section>
-            <section class="promo"><p>promo</p></section>
-            <section class="promo"><p>promo</p></section>
-            <section class="promo"><p>promo</p></section>
-            <section class="promo"><p>promo</p></section>
-            <section class="promo"><p>promo</p></section>
-        </section>
-        ```
+    ```html
+    <section class="promo-container">
+        <section class="promo"><p>promo</p></section>
+        <section class="promo"><p>promo</p></section>
+        <section class="promo"><p>promo</p></section>
+        <section class="promo"><p>promo</p></section>
+        <section class="promo"><p>promo</p></section>
+        <section class="promo"><p>promo</p></section>
+    </section>
+    ```
 5. Write your Sass
 
     Lets say you want these promos to be 50% on a small screen, 33.33% on a medium screen and then 16.66% on a large screen. You could achive that with minimal-grid and some Sass like this:
 
-        ``` scss
+    ``` scss
     .promo-container {
         @extend %grid-container;
             .promo {
@@ -56,7 +56,7 @@
             }
         }
     }
-        ```
+    ```
 
 6. That's it!
 
