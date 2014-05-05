@@ -12,11 +12,18 @@
 
 ### How to use in your next project
 1. Download / clone this repo
+
+    ```
+    Code
+    More Code
+    ```
 2. Import the Minimal Grid (as a partial) eg:
+
     ```sass
     @import "partials/minimal-grid";
     ```
 3. Set your breakpoints (pixel values are converted to ems)
+
     ```sass
     $breakpoint-small:  em(400);
     $breakpoint-medium: em(800);
@@ -26,6 +33,7 @@
 4. Write your HTML
 Let's say you have 6 'promos' to show on a page,
 you could write some HTML like this:
+
     ```html
     <section class="promo-container">
         <section class="promo"><p>promo</p></section>
@@ -38,7 +46,8 @@ you could write some HTML like this:
     ```
 5. Write your Sass
 Lets say you want these promos to be 50% on a small screen, 33.33% on a medium screen and then 16.66% on a large screen. You could achive that with minimal-grid and some Sass like this:
-``` sass
+
+    ``` sass
 .promo-container {
     @extend %grid-container;
     .promo {
@@ -51,7 +60,8 @@ Lets say you want these promos to be 50% on a small screen, 33.33% on a medium s
         }
     }
 }
-```
+ ```
+
 6. That's it !
 This is very much a work in progress & pull requests welcome !
 
