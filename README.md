@@ -63,11 +63,5 @@ Lets say you want these promos to be 50% on a small screen, 33.33% on a medium s
  ```
 
 6. That's it !
-This is very much a work in progress & pull requests welcome !
 
-### To Do
-- [x] Finalise breakpoint naming conventions
-- [x] Switch to EMs for breakpoints
-- [x] Setup defaults for breakpoints
-- [x] Optimise percentage mixin
-- [ ] Find DRY / better solution for %grid-block
+**This is very much a work in progress & pull requests welcome !**
