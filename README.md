@@ -42,7 +42,7 @@ you could write some HTML like this:
 5. Write your Sass
 Lets say you want these promos to be 50% on a small screen, 33.33% on a medium screen and then 16.66% on a large screen. You could achive that with minimal-grid and some Sass like this:
 
-    ``` scss
+    ``` sass
 .promo-container {
     @extend %grid-container;
     .promo {
