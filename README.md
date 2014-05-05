@@ -42,9 +42,10 @@ Lets say you want these promos to be 50% on a small screen, 33.33% on a medium s
 That's it - this is very much a work in progress & pull requests welcome !
 
 ## To Do
-- [ ] Finalise breakpoint naming conventions
-- [ ] Switch to EMs for breakpoints
-- [ ] Find alternative solution to section selector within grid container
+- [x] Finalise breakpoint naming conventions
+- [x] Switch to EMs for breakpoints
+- [x] Setup defaults for breakpoints
 - [ ] Optimise percentage mixin
-- [ ] Setup fallbacks for breakpoints etc
+- [ ] Find alternative solution to section selector within grid container
+
 

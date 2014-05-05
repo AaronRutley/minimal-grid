@@ -1,17 +1,16 @@
 /*--------------------------------------------------------------
-Project / Design / Content Based Breakpoints
---------------------------------------------------------------*/
-$break-small: 550px;
-$break-medium: 1000px;
-$break-large: 1200px;
-$minimal-grid-container-max-width:1200px;
-$minimal-grid-gutter-width:20px;
-
-/*--------------------------------------------------------------
 Imports
 --------------------------------------------------------------*/
 @import "partials/reset";
 @import "partials/minimal-grid";
+
+/*--------------------------------------------------------------
+Project sepecific / Design / Content Based Breakpoints to overwrite defaults
+--------------------------------------------------------------*/
+$breakpoint-small:  em(410);
+$breakpoint-medium: em(800);
+$breakpoint-large:  em(1200);
+$breakpoint-xlarge: em(1600);
 
 /*--------------------------------------------------------------
 example page layout
@@ -216,13 +215,16 @@ styles just for the demo
 .title:after {
     content: "mobile frist ";
     @include breakpoint(from-small) {
-        content: " bigger than small breakpoint";
+        content: "from small breakpoint";
     }
     @include breakpoint(from-medium) {
-        content: " bigger than medium breakpoint";
+        content: "from medium breakpoint";
     }
     @include breakpoint(from-large) {
-        content: "bigger than large breakpoint";
+        content: "from large breakpoint";
+    }
+    @include breakpoint(from-xlarge) {
+        content: "from xlarge breakpoint";
     }
 }
 p {

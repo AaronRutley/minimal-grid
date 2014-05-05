@@ -1,6 +1,32 @@
 /*--------------------------------------------------------------
+Minimal Grid
+--------------------------------------------------------------*/
+
+/* Border Box all the things */
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* PX to EM Conversion */
+$base-em-context: 16;
+@function em($pixels, $context: $base-em-context) {
+  @return #{$pixels/$context}em
+}
+
+/* Starter Breakpoints */
+$breakpoint-small:  em(400);
+$breakpoint-medium: em(800);
+$breakpoint-large:  em(1200);
+$breakpoint-xlarge: em(1600);
+
+/* Grid Defaults */
+$minimal-grid-container-max-width:1200px;
+$minimal-grid-gutter-width:20px;
+
+/*--------------------------------------------------------------
 Grid Container
-eg: @extend %grid-container;
 --------------------------------------------------------------*/
 %grid-container {
     clear: both;
@@ -21,7 +47,6 @@ Grid Block
 
 /*--------------------------------------------------------------
 Grid Mixin
-eg: @include grid(33); for 33.33%
 --------------------------------------------------------------*/
 @mixin grid($percentage) {
     @if $percentage == 10 { width:10%; }
@@ -46,7 +71,12 @@ eg: @include grid(33); for 33.33%
     @else if $percentage == 95 {width:95%;}
     @else if $percentage == 100 {width:100%;}
     @else {width:$percentage*1%;}
-    @extend %grid-block;
+
+    // @extend %grid-block;
+    padding-left:($minimal-grid-gutter-width/2);
+    padding-right:($minimal-grid-gutter-width/2);
+    display: inline-block;
+    float: left;
 }
 
 /*--------------------------------------------------------------
@@ -54,22 +84,25 @@ Breakpoint Mixin
 --------------------------------------------------------------*/
 @mixin breakpoint($point) {
     @if $point == to-small {
-        @media only screen and (max-width: $break-small) { @content; }
+        @media only screen and (max-width: $breakpoint-small) { @content; }
     }
     @else if $point == from-small {
-        @media only screen and  (min-width: $break-small) { @content; }
+        @media only screen and  (min-width: $breakpoint-small) { @content; }
     }
-    @else if $point == from-small-to-medium {
-        @media only screen and  (min-width: $break-small) and (max-width: $break-medium) { @content; }
+    @else if $point == small-to-medium {
+        @media only screen and  (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) { @content; }
     }
     @else if $point == from-medium {
-        @media only screen and  (min-width: $break-medium) { @content; }
+        @media only screen and  (min-width: $breakpoint-medium) { @content; }
     }
-    @else if $point == from-medium-to-large {
-        @media only screen and  (min-width: $break-medium) and (max-width: $break-large) { @content; }
+    @else if $point == medium-to-large {
+        @media only screen and  (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) { @content; }
     }
     @else if $point == from-large {
-        @media only screen and (min-width: $break-large) { @content; }
+        @media only screen and (min-width: $breakpoint-large) { @content; }
+    }
+    @else if $point == from-xlarge {
+        @media only screen and (min-width: $breakpoint-xlarge) { @content; }
     }
 }
 

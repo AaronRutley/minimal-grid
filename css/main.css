@@ -1,14 +1,6 @@
 /*--------------------------------------------------------------
-Project / Design / Content Based Breakpoints
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
 Imports
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-Border Box
---------------------------------------------------------------*/
-*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-
 /*--------------------------------------------------------------
 Reset
 --------------------------------------------------------------*/
@@ -27,19 +19,24 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 
 /*--------------------------------------------------------------
+Minimal Grid
+--------------------------------------------------------------*/
+/* Border Box all the things */
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/* PX to EM Conversion */
+/* Starter Breakpoints */
+/* Grid Defaults */
+/*--------------------------------------------------------------
 Grid Container
-eg: @extend %grid-container;
 --------------------------------------------------------------*/
 .your-wrapper-here .your-container-here, .your-container-class-here, .promo-container { clear: both; max-width: 1200px; margin: 0 auto; }
 
 /*--------------------------------------------------------------
 Grid Block
 --------------------------------------------------------------*/
-.your-wrapper-here .content-col, .your-wrapper-here .sidebar, .your-container-class-here .classes, .your-container-class-here .can, .your-container-class-here .be, .your-container-class-here .responsive, .your-container-class-here .and, .your-container-class-here .semantic, .your-container-class-here .very-class, .your-container-class-here .much-wow, .your-container-class-here .so-responsive, .your-container-class-here .such-semantic, .your-container-class-here .many-options, .your-container-class-here .im-one-thid, .your-container-class-here .im-15, .your-container-class-here .im-85, .your-container-class-here .im-25, .your-container-class-here .im-75, .your-container-class-here .im-35, .your-container-class-here .im-65, .your-container-class-here .im-45, .your-container-class-here .im-55, .promo-container .promo { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
-
 /*--------------------------------------------------------------
 Grid Mixin
-eg: @include grid(33); for 33.33%
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 Breakpoint Mixin
@@ -50,92 +47,95 @@ Clearfix Extend
 .your-wrapper-here .your-container-here:after, .your-container-class-here:after, .promo-container:after { content: ""; display: table; clear: both; }
 
 /*--------------------------------------------------------------
+Project sepecific / Design / Content Based Breakpoints to overwrite defaults
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 example page layout
 --------------------------------------------------------------*/
 .your-wrapper-here { background: #f1f1f1; }
-.your-wrapper-here .content-col { width: 100%; }
-@media only screen and (min-width: 550px) { .your-wrapper-here .content-col { width: 50%; } }
-@media only screen and (min-width: 1000px) { .your-wrapper-here .content-col { width: 70%; } }
-.your-wrapper-here .sidebar { width: 100%; }
-@media only screen and (min-width: 550px) { .your-wrapper-here .sidebar { width: 50%; } }
-@media only screen and (min-width: 1000px) { .your-wrapper-here .sidebar { width: 30%; } }
+.your-wrapper-here .content-col { width: 100%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
+@media only screen and (min-width: 25.625em) { .your-wrapper-here .content-col { width: 50%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; } }
+@media only screen and (min-width: 50em) { .your-wrapper-here .content-col { width: 70%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; } }
+.your-wrapper-here .sidebar { width: 100%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
+@media only screen and (min-width: 25.625em) { .your-wrapper-here .sidebar { width: 50%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; } }
+@media only screen and (min-width: 50em) { .your-wrapper-here .sidebar { width: 30%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; } }
 
 /*--------------------------------------------------------------
 Example semantic row
 --------------------------------------------------------------*/
-.your-container-class-here .classes { width: 30%; }
+.your-container-class-here .classes { width: 30%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .classes :after { content: "30%"; }
-@media only screen and (min-width: 550px) { .your-container-class-here .classes { width: 20%; }
+@media only screen and (min-width: 25.625em) { .your-container-class-here .classes { width: 20%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .classes :after { content: "20%"; } }
-@media only screen and (min-width: 1000px) { .your-container-class-here .classes { width: 10%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .classes { width: 10%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .classes :after { content: "10%"; } }
-.your-container-class-here .can { width: 70%; }
+.your-container-class-here .can { width: 70%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .can :after { content: "70%"; }
-@media only screen and (min-width: 550px) { .your-container-class-here .can { width: 80%; }
+@media only screen and (min-width: 25.625em) { .your-container-class-here .can { width: 80%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .can :after { content: "80%"; } }
-@media only screen and (min-width: 1000px) { .your-container-class-here .can { width: 90%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .can { width: 90%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .can :after { content: "90%"; } }
-.your-container-class-here .be { width: 100%; }
+.your-container-class-here .be { width: 100%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .be :after { content: "100%"; }
-@media only screen and (min-width: 1000px) { .your-container-class-here .be { width: 20%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .be { width: 20%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .be :after { content: "20%"; } }
-.your-container-class-here .responsive { width: 100%; }
+.your-container-class-here .responsive { width: 100%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .responsive :after { content: "100%"; }
-@media only screen and (min-width: 1000px) { .your-container-class-here .responsive { width: 80%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .responsive { width: 80%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .responsive :after { content: "80%"; } }
-.your-container-class-here .and { width: 60%; }
+.your-container-class-here .and { width: 60%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .and :after { content: "60%"; }
-@media only screen and (min-width: 1000px) { .your-container-class-here .and { width: 30%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .and { width: 30%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .and :after { content: "30%"; } }
-.your-container-class-here .semantic { width: 40%; }
+.your-container-class-here .semantic { width: 40%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .semantic :after { content: "40%"; }
-@media only screen and (min-width: 1000px) { .your-container-class-here .semantic { width: 70%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .semantic { width: 70%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .semantic :after { content: "70%"; } }
-.your-container-class-here .very-class { width: 40%; }
+.your-container-class-here .very-class { width: 40%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .very-class :after { content: "40%"; }
-@media only screen and (min-width: 1000px) { .your-container-class-here .very-class { width: 40%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .very-class { width: 40%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .very-class :after { content: "40%"; } }
-.your-container-class-here .much-wow { width: 60%; }
+.your-container-class-here .much-wow { width: 60%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .much-wow :after { content: "60%"; }
-@media only screen and (min-width: 1000px) { .your-container-class-here .much-wow { width: 60%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .much-wow { width: 60%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .much-wow :after { content: "60%"; } }
-.your-container-class-here .so-responsive { width: 50%; }
+.your-container-class-here .so-responsive { width: 50%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .so-responsive :after { content: "50%"; }
-@media only screen and (min-width: 1000px) { .your-container-class-here .so-responsive { width: 50%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .so-responsive { width: 50%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .so-responsive :after { content: "50%"; } }
-.your-container-class-here .such-semantic { width: 50%; }
+.your-container-class-here .such-semantic { width: 50%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .such-semantic :after { content: "50%"; }
-@media only screen and (min-width: 1000px) { .your-container-class-here .such-semantic { width: 50%; }
+@media only screen and (min-width: 50em) { .your-container-class-here .such-semantic { width: 50%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .your-container-class-here .such-semantic :after { content: "50%"; } }
-.your-container-class-here .many-options { width: 100%; }
+.your-container-class-here .many-options { width: 100%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .many-options :after { content: "100%"; }
-.your-container-class-here .im-one-thid { width: 33.33%; }
+.your-container-class-here .im-one-thid { width: 33.33%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .im-one-thid :after { content: "33%"; }
-.your-container-class-here .im-15 { width: 15%; }
+.your-container-class-here .im-15 { width: 15%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .im-15 :after { content: "15%"; }
-.your-container-class-here .im-85 { width: 85%; }
+.your-container-class-here .im-85 { width: 85%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .im-85 :after { content: "85%"; }
-.your-container-class-here .im-25 { width: 25%; }
+.your-container-class-here .im-25 { width: 25%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .im-25 :after { content: "25%"; }
-.your-container-class-here .im-75 { width: 75%; }
+.your-container-class-here .im-75 { width: 75%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .im-75 :after { content: "75%"; }
-.your-container-class-here .im-35 { width: 35%; }
+.your-container-class-here .im-35 { width: 35%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .im-35 :after { content: "35%"; }
-.your-container-class-here .im-65 { width: 65%; }
+.your-container-class-here .im-65 { width: 65%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .im-65 :after { content: "65%"; }
-.your-container-class-here .im-45 { width: 45%; }
+.your-container-class-here .im-45 { width: 45%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .im-45 :after { content: "45%"; }
-.your-container-class-here .im-55 { width: 55%; }
+.your-container-class-here .im-55 { width: 55%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .your-container-class-here .im-55 :after { content: "55%"; }
 
 /*--------------------------------------------------------------
 promo examples
 --------------------------------------------------------------*/
-.promo-container .promo { width: 50%; }
+.promo-container .promo { width: 50%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 .promo-container .promo :after { content: "50%"; }
-@media only screen and (min-width: 1000px) { .promo-container .promo { width: 33.33%; }
+@media only screen and (min-width: 50em) { .promo-container .promo { width: 33.33%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .promo-container .promo :after { content: "33.33%"; } }
-@media only screen and (min-width: 1200px) { .promo-container .promo { width: 16.66%; }
+@media only screen and (min-width: 75em) { .promo-container .promo { width: 16.66%; padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
   .promo-container .promo :after { content: "16.66%"; } }
 
 /*--------------------------------------------------------------
@@ -144,9 +144,10 @@ styles just for the demo
 .title { font-size: 12px; text-align: center; width: 100%; line-height: 20px; margin-top: 10px; }
 
 .title:after { content: "mobile frist "; }
-@media only screen and (min-width: 550px) { .title:after { content: " bigger than small breakpoint"; } }
-@media only screen and (min-width: 1000px) { .title:after { content: " bigger than medium breakpoint"; } }
-@media only screen and (min-width: 1200px) { .title:after { content: "bigger than large breakpoint"; } }
+@media only screen and (min-width: 25.625em) { .title:after { content: "from small breakpoint"; } }
+@media only screen and (min-width: 50em) { .title:after { content: "from medium breakpoint"; } }
+@media only screen and (min-width: 75em) { .title:after { content: "from large breakpoint"; } }
+@media only screen and (min-width: 100em) { .title:after { content: "from xlarge breakpoint"; } }
 
 p { background: #e5e5e5; color: #555; text-align: center; line-height: 40px; font-size: 14px; display: inline-block; width: 100%; }
 
