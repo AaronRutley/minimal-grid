@@ -26,36 +26,38 @@
     $breakpoint-xlarge: em(1600);
     ```
 4. Write your HTML
-Let's say you have 6 'promos' to show on a page,
-you could write some HTML like this:
 
-    ```html
-    <section class="promo-container">
-        <section class="promo"><p>promo</p></section>
-        <section class="promo"><p>promo</p></section>
-        <section class="promo"><p>promo</p></section>
-        <section class="promo"><p>promo</p></section>
-        <section class="promo"><p>promo</p></section>
-        <section class="promo"><p>promo</p></section>
-    </section>
-    ```
+    Let's say you have 6 'promos' to show on a page, you could write some HTML like this:
+
+        ```html
+        <section class="promo-container">
+            <section class="promo"><p>promo</p></section>
+            <section class="promo"><p>promo</p></section>
+            <section class="promo"><p>promo</p></section>
+            <section class="promo"><p>promo</p></section>
+            <section class="promo"><p>promo</p></section>
+            <section class="promo"><p>promo</p></section>
+        </section>
+        ```
 5. Write your Sass
-Lets say you want these promos to be 50% on a small screen, 33.33% on a medium screen and then 16.66% on a large screen. You could achive that with minimal-grid and some Sass like this:
 
-    ``` scss
-.promo-container {
-    @extend %grid-container;
-}
-.promo {
-    @include grid(50);
-    @include breakpoint(from-medium) {
-        @include grid(33);
+    Lets say you want these promos to be 50% on a small screen, 33.33% on a medium screen and then 16.66% on a large screen. You could achive that with minimal-grid and some Sass like this:
+
+        ``` scss
+    .promo-container {
+        @extend %grid-container;
+            .promo {
+            @include grid(50);
+            @include breakpoint(from-medium) {
+                @include grid(33);
+            }
+            @include breakpoint(from-large) {
+                @include grid(16);
+            }
+        }
     }
-    @include breakpoint(from-large) {
-        @include grid(16);
-    }
-}
-    ```
+        ```
 
 6. That's it!
+
 **This is very much a work in progress & pull requests welcome**
