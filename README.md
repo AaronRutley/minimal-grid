@@ -45,7 +45,7 @@ That's it - this is very much a work in progress & pull requests welcome !
 - [x] Finalise breakpoint naming conventions
 - [x] Switch to EMs for breakpoints
 - [x] Setup defaults for breakpoints
-- [ ] Optimise percentage mixin
-- [ ] Find alternative solution to section selector within grid container
+- [x] Optimise percentage mixin
+- [ ] Find DRY solution for %grid-block
 
 
