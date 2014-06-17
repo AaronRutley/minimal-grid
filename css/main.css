@@ -24,12 +24,12 @@ Minimal Grid
 
 .your-wrapper-here .your-container-here > section, .your-container-class-here > section, .promo-container > section { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 
-.your-wrapper-here .your-container-here, .your-container-class-here, .promo-container { clear: both; max-width: 1200px; margin: 0 auto; }
+.your-wrapper-here .your-container-here, .your-container-class-here, .promo-container { max-width: 1200px; margin: 0 auto; }
 
 /*--------------------------------------------------------------
 example page layout
 --------------------------------------------------------------*/
-.your-wrapper-here { background: #f1f1f1; }
+.your-wrapper-here { background: #27ae60; }
 .your-wrapper-here .content-col { width: 100%; }
 @media only screen and (min-width: 25.625em) { .your-wrapper-here .content-col { width: 50%; } }
 @media only screen and (min-width: 50em) { .your-wrapper-here .content-col { width: 70%; } }
@@ -126,13 +126,15 @@ styles just for the demo
 @media only screen and (min-width: 75em) { .title:after { content: "from large breakpoint"; } }
 @media only screen and (min-width: 100em) { .title:after { content: "from xlarge breakpoint"; } }
 
-p { background: #e5e5e5; color: #555; text-align: center; line-height: 40px; font-size: 14px; display: inline-block; width: 100%; }
+p { background: #3498db; color: #fff; text-align: center; line-height: 40px; font-size: 14px; display: inline-block; width: 100%; }
 
 .your-container-class-here section { margin-top: 10px; }
 
 .promo-container { max-width: 1280px; }
-.promo-container section { border: 1px solid #CCC; margin-top: 10px; }
+.promo-container section { background: #8e44ad; margin-top: 10px; }
+.promo-container section p { background: #9b59b6; }
 
 .your-wrapper-here { margin-top: 10px; }
+.your-wrapper-here p { background: #2ecc71; }
 
 .your-container-here span { width: 100%; display: none; text-align: center; clear: both; font-size: 12px; line-height: 20px; color: #777; }

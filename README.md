@@ -46,7 +46,7 @@
     ``` scss
     .promo-container {
         @extend %grid-container;
-            .promo {
+        .promo {
             @include grid(50);
             @include breakpoint(from-medium) {
                 @include grid(33);

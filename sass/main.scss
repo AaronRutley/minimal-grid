@@ -12,7 +12,7 @@ $breakpoint-xlarge: em(1600);
 example page layout
 --------------------------------------------------------------*/
 .your-wrapper-here {
-    background: #f1f1f1;
+    background: #27ae60;
 
     .your-container-here {
     @extend %grid-container;
@@ -224,8 +224,8 @@ styles just for the demo
     }
 }
 p {
-    background: #e5e5e5;
-    color: #555;
+    background: #3498db;
+    color: #fff;
     text-align: center;
     line-height: 40px;
     font-size: 14px;
@@ -242,13 +242,20 @@ p {
 .promo-container {
     max-width:1280px;
     section {
-        border:1px solid #CCC;
+
+        background: #8e44ad;
         margin-top: 10px;
+        p {
+            background: #9b59b6;
+        }
     }
 }
 
 .your-wrapper-here {
     margin-top: 10px;
+    p {
+        background: #2ecc71;
+    }
 }
 
 .your-container-here span {
@@ -259,4 +266,5 @@ p {
     font-size: 12px;
     line-height: 20px;
     color: #777;
+
  }
