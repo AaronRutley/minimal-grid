@@ -52,6 +52,20 @@ $minimal-grid-gutter-width:20px;
     }
 }
 
+// Block Container
+%block-container {
+    max-width: $minimal-grid-container-max-width;
+    padding:($minimal-grid-gutter-width/4);
+    margin: 0 auto;
+    @extend %clearfix;
+    > li {
+        @extend %grid-block;
+        list-style: none;
+        margin:0;
+        padding:($minimal-grid-gutter-width/4);
+    }
+}
+
 // Grid Mixin
 @mixin grid($percentage) {
     @if $percentage == 10       { width:10%; }
@@ -89,14 +103,26 @@ $minimal-grid-gutter-width:20px;
     @else if $point == small-to-medium {
         @media only screen and  (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) { @content; }
     }
+    @else if $point == to-medium {
+        @media only screen and  (max-width: $breakpoint-medium) { @content; }
+    }
     @else if $point == from-medium {
         @media only screen and  (min-width: $breakpoint-medium) { @content; }
     }
     @else if $point == medium-to-large {
         @media only screen and  (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) { @content; }
     }
+    @else if $point == to-large {
+        @media only screen and (max-width: $breakpoint-large) { @content; }
+    }
     @else if $point == from-large {
         @media only screen and (min-width: $breakpoint-large) { @content; }
+    }
+    @else if $point == large-to-x-large {
+        @media only screen and  (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) { @content; }
+    }
+    @else if $point == to-xlarge {
+        @media only screen and (max-width: $breakpoint-xlarge) { @content; }
     }
     @else if $point == from-xlarge {
         @media only screen and (min-width: $breakpoint-xlarge) { @content; }

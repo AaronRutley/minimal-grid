@@ -20,11 +20,14 @@ Minimal Grid
 --------------------------------------------------------------*/
 *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-.your-wrapper-here .your-container-here:after, .your-container-class-here:after, .promo-container:after { content: ""; display: table; clear: both; }
+.your-wrapper-here .your-container-here:after, .your-container-class-here:after, .promo-container:after, .example-gallery-block:after { content: ""; display: table; clear: both; }
 
-.your-wrapper-here .your-container-here > section, .your-container-class-here > section, .promo-container > section { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
+.your-wrapper-here .your-container-here > section, .your-container-class-here > section, .promo-container > section, .example-gallery-block > li { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 
 .your-wrapper-here .your-container-here, .your-container-class-here, .promo-container { max-width: 1200px; margin: 0 auto; }
+
+.example-gallery-block { max-width: 1200px; padding: 5px; margin: 0 auto; }
+.example-gallery-block > li { list-style: none; margin: 0; padding: 5px; }
 
 /*--------------------------------------------------------------
 example page layout
@@ -108,12 +111,20 @@ Example semantic row
 /*--------------------------------------------------------------
 promo examples
 --------------------------------------------------------------*/
+.promo-container { max-width: 1280px; }
 .promo-container .promo { width: 50%; }
 .promo-container .promo :after { content: "50%"; }
 @media only screen and (min-width: 50em) { .promo-container .promo { width: 33.33%; }
   .promo-container .promo :after { content: "33.33%"; } }
 @media only screen and (min-width: 75em) { .promo-container .promo { width: 16.66%; }
   .promo-container .promo :after { content: "16.66%"; } }
+
+/*--------------------------------------------------------------
+gallery block example
+--------------------------------------------------------------*/
+.example-gallery-block li { width: 50%; }
+@media only screen and (min-width: 50em) { .example-gallery-block li { width: 33.33%; } }
+@media only screen and (min-width: 75em) { .example-gallery-block li { width: 16.66%; } }
 
 /*--------------------------------------------------------------
 styles just for the demo
@@ -130,7 +141,6 @@ p { background: #3498db; color: #fff; text-align: center; line-height: 40px; fon
 
 .your-container-class-here section { margin-top: 10px; }
 
-.promo-container { max-width: 1280px; }
 .promo-container section { background: #8e44ad; margin-top: 10px; }
 .promo-container section p { background: #9b59b6; }
 
@@ -138,3 +148,5 @@ p { background: #3498db; color: #fff; text-align: center; line-height: 40px; fon
 .your-wrapper-here p { background: #2ecc71; }
 
 .your-container-here span { width: 100%; display: none; text-align: center; clear: both; font-size: 12px; line-height: 20px; color: #777; }
+
+.example-gallery-block img { width: 100%; max-width: 100%; height: auto; }

@@ -6,6 +6,7 @@
 * Mobile first breakpoints ('from-medium' instead of 'desktop')
 * Sass based (no ugly classs in your html)
 * Easy to extend or customise per project
+* Block Grid options for styling lists
 
 ### Example
 [Check out an example](http://htmlpreview.github.io/?https://github.com/AaronRutley/minimal-grid/blob/master/index.html)

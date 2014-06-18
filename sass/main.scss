@@ -183,6 +183,8 @@ promo examples
 --------------------------------------------------------------*/
 .promo-container {
     @extend %grid-container;
+    max-width:1280px;
+
     .promo {
         @include grid(50);
         :after { content: "50%"; }
@@ -197,6 +199,22 @@ promo examples
     }
 }
 
+/*--------------------------------------------------------------
+gallery block example
+--------------------------------------------------------------*/
+.example-gallery-block {
+    @extend %block-container;
+
+    li {
+        @include grid(50);
+        @include breakpoint(from-medium) {
+            @include grid(33);
+        }
+        @include breakpoint(from-large) {
+            @include grid(16);
+        }
+    }
+}
 
 /*--------------------------------------------------------------
 styles just for the demo
@@ -240,9 +258,7 @@ p {
 }
 
 .promo-container {
-    max-width:1280px;
     section {
-
         background: #8e44ad;
         margin-top: 10px;
         p {
@@ -268,3 +284,9 @@ p {
     color: #777;
 
  }
+
+ .example-gallery-block img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
