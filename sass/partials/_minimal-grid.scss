@@ -52,6 +52,17 @@ $minimal-grid-gutter-width:20px;
     }
 }
 
+// Grid Container Collapse
+%grid-container-collapse {
+    max-width: $minimal-grid-container-max-width;
+    margin: 0 auto;
+    @extend %clearfix;
+    > section {
+        @extend %grid-block;
+        padding:0;
+    }
+}
+
 // Block Container
 %block-container {
     max-width: $minimal-grid-container-max-width;

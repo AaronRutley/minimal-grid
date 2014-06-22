@@ -20,11 +20,14 @@ Minimal Grid
 --------------------------------------------------------------*/
 *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-.your-wrapper-here .your-container-here:after, .your-container-class-here:after, .promo-container:after, .example-gallery-block:after { content: ""; display: table; clear: both; }
+.your-wrapper-here .your-container-here:after, .your-container-class-here:after, .promo-container:after, .another-promo-container:after, .example-gallery-block:after { content: ""; display: table; clear: both; }
 
-.your-wrapper-here .your-container-here > section, .your-container-class-here > section, .promo-container > section, .example-gallery-block > li { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
+.your-wrapper-here .your-container-here > section, .your-container-class-here > section, .promo-container > section, .another-promo-container > section, .example-gallery-block > li { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
 
 .your-wrapper-here .your-container-here, .your-container-class-here, .promo-container { max-width: 1200px; margin: 0 auto; }
+
+.another-promo-container { max-width: 1200px; margin: 0 auto; }
+.another-promo-container > section { padding: 0; }
 
 .example-gallery-block { max-width: 1200px; padding: 5px; margin: 0 auto; }
 .example-gallery-block > li { list-style: none; margin: 0; padding: 5px; }
@@ -32,7 +35,7 @@ Minimal Grid
 /*--------------------------------------------------------------
 example page layout
 --------------------------------------------------------------*/
-.your-wrapper-here { background: #27ae60; }
+.your-wrapper-here { background: #ccc; }
 .your-wrapper-here .content-col { width: 100%; }
 @media only screen and (min-width: 25.625em) { .your-wrapper-here .content-col { width: 50%; } }
 @media only screen and (min-width: 50em) { .your-wrapper-here .content-col { width: 70%; } }
@@ -90,7 +93,7 @@ Example semantic row
 .your-container-class-here .many-options { width: 100%; }
 .your-container-class-here .many-options :after { content: "100%"; }
 .your-container-class-here .im-one-thid { width: 33.33%; }
-.your-container-class-here .im-one-thid :after { content: "33%"; }
+.your-container-class-here .im-one-thid :after { content: "33.33%"; }
 .your-container-class-here .im-15 { width: 15%; }
 .your-container-class-here .im-15 :after { content: "15%"; }
 .your-container-class-here .im-85 { width: 85%; }
@@ -127,9 +130,20 @@ gallery block example
 @media only screen and (min-width: 75em) { .example-gallery-block li { width: 16.66%; } }
 
 /*--------------------------------------------------------------
+collapse examples
+--------------------------------------------------------------*/
+.another-promo-container { max-width: 1180px; }
+.another-promo-container .promo { width: 50%; }
+.another-promo-container .promo :after { content: "50%"; }
+@media only screen and (min-width: 50em) { .another-promo-container .promo { width: 33.33%; }
+  .another-promo-container .promo :after { content: "33.33%"; } }
+@media only screen and (min-width: 75em) { .another-promo-container .promo { width: 16.66%; }
+  .another-promo-container .promo :after { content: "16.66%"; } }
+
+/*--------------------------------------------------------------
 styles just for the demo
 --------------------------------------------------------------*/
-.title { font-size: 12px; text-align: center; width: 100%; line-height: 20px; margin-top: 10px; }
+.title { font-size: 0.875em; text-align: center; width: 100%; line-height: 20px; margin-top: 10px; font-family: Futura, "Trebuchet MS", Arial, sans-serif; }
 
 .title:after { content: "mobile frist "; }
 @media only screen and (min-width: 25.625em) { .title:after { content: "from small breakpoint"; } }
@@ -137,15 +151,20 @@ styles just for the demo
 @media only screen and (min-width: 75em) { .title:after { content: "from large breakpoint"; } }
 @media only screen and (min-width: 100em) { .title:after { content: "from xlarge breakpoint"; } }
 
-p { background: #3498db; color: #fff; text-align: center; line-height: 40px; font-size: 14px; display: inline-block; width: 100%; }
+p { background: #3498db; color: #fff; text-align: center; line-height: 42px; font-size: 0.875em; display: inline-block; width: 100%; font-family: Futura, "Trebuchet MS", Arial, sans-serif; }
 
 .your-container-class-here section { margin-top: 10px; }
 
 .promo-container section { background: #8e44ad; margin-top: 10px; }
 .promo-container section p { background: #9b59b6; }
 
+.another-promo-container { margin-top: 10px; }
+.another-promo-container p { background: none; }
+.another-promo-container section:nth-child(odd) { background: #1abc9c; }
+.another-promo-container section:nth-child(even) { background: #16a085; }
+
 .your-wrapper-here { margin-top: 10px; }
-.your-wrapper-here p { background: #2ecc71; }
+.your-wrapper-here p { background: #34495e; }
 
 .your-container-here span { width: 100%; display: none; text-align: center; clear: both; font-size: 12px; line-height: 20px; color: #777; }
 

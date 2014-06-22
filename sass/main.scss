@@ -12,7 +12,7 @@ $breakpoint-xlarge: em(1600);
 example page layout
 --------------------------------------------------------------*/
 .your-wrapper-here {
-    background: #27ae60;
+    background: #ccc;
 
     .your-container-here {
     @extend %grid-container;
@@ -140,7 +140,7 @@ Example semantic row
 
     .im-one-thid {
         @include grid(33);
-        :after { content: "33%"; }
+        :after { content: "33.33%"; }
     }
 
     .im-15 {
@@ -217,14 +217,36 @@ gallery block example
 }
 
 /*--------------------------------------------------------------
+collapse examples
+--------------------------------------------------------------*/
+.another-promo-container {
+    @extend %grid-container-collapse;
+    max-width:1180px;
+
+    .promo {
+        @include grid(50);
+        :after { content: "50%"; }
+        @include breakpoint(from-medium) {
+            @include grid(33);
+            :after { content: "33.33%"; }
+        }
+        @include breakpoint(from-large) {
+            @include grid(16);
+            :after { content: "16.66%"; }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
 styles just for the demo
 --------------------------------------------------------------*/
 .title {
-    font-size: 12px;
+    font-size: em(14);
     text-align: center;
     width: 100%;
     line-height: 20px;
     margin-top: 10px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 .title:after {
     content: "mobile frist ";
@@ -245,10 +267,11 @@ p {
     background: #3498db;
     color: #fff;
     text-align: center;
-    line-height: 40px;
-    font-size: 14px;
+    line-height: 42px;
+    font-size: em(14);
     display: inline-block;
     width: 100%;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .your-container-class-here {
@@ -267,10 +290,23 @@ p {
     }
 }
 
+.another-promo-container {
+    margin-top:10px;
+    p {
+        background:none;
+    }
+    section:nth-child(odd) {
+        background: #1abc9c;
+    }
+    section:nth-child(even) {
+        background: #16a085;
+    }
+}
+
 .your-wrapper-here {
     margin-top: 10px;
     p {
-        background: #2ecc71;
+        background: #34495e;
     }
 }
 
