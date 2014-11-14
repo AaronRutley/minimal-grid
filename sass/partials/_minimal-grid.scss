@@ -129,8 +129,8 @@ $minimal-grid-gutter-width:20px;
     @else if $point == from-large {
         @media only screen and (min-width: $breakpoint-large) { @content; }
     }
-    @else if $point == large-to-x-large {
-        @media only screen and  (min-width: $breakpoint-large) and (max-width: $breakpoint-x-large) { @content; }
+    @else if $point == large-to-xlarge {
+        @media only screen and  (min-width: $breakpoint-large) and (max-width: $breakpoint-xlarge) { @content; }
     }
     @else if $point == to-xlarge {
         @media only screen and (max-width: $breakpoint-xlarge) { @content; }
