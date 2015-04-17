@@ -1,0 +1,19 @@
+{
+    "name": "minimal-grid",
+    "version": "1.0.1",
+    "main": "sass/partials/_minimal-grid.scss",
+        "ignore": [
+            ".git",
+            "spec",
+            ".sass-cache",
+            "css",
+            "node_modules",
+            "index.html",
+            ".gitignore",
+            "bower.json",
+            "gruntfile.js",
+            "package.json",
+            "README.md"
+        ]
+}
+
