@@ -12,15 +12,16 @@
 [Check out an example](http://htmlpreview.github.io/?https://github.com/AaronRutley/minimal-grid/blob/master/index.html)
 
 ### How to install - Bower
-    ```bash
-    bower install minimal-grid
-    ```
+
+```
+bower install minimal-grid
+```
 
 ### How to install - As a Sass / SCSS partial
 
-    ```scss
-    @import "partials/minimal-grid";
-    ```
+```scss
+@import "partials/minimal-grid";
+```
 
 ## How to use
 1. Open _minimal-grid.scss
@@ -68,3 +69,10 @@
 5. That's it!
 
 **This is very much a work in progress & pull requests welcome**
+
+### Changelog:
+#### 1.0.1
+* Fixed typo in xlarge breakpoint
+
+#### 1.0.0
+* Inital Commit
