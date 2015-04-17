@@ -1,29 +1,29 @@
-# Minimal Grid
+# Minimal Grid v1.0.1
 > A minimal (Sass based) grid system for mobile first responsive design
 
-### Features
+#### Features
 * Percentage based (50% instead of span_6)
 * Mobile first breakpoints ('from-medium' instead of 'desktop')
 * Sass based (no ugly classs in your html)
 * Easy to extend or customise per project
 * Block Grid options for styling lists
 
-### Example
+#### Example
 [Check out an example](http://htmlpreview.github.io/?https://github.com/AaronRutley/minimal-grid/blob/master/index.html)
 
-### How to install - Bower
+#### How to install - Bower
 
 ```
 bower install minimal-grid
 ```
 
-### How to install - As a Sass / SCSS partial
+#### How to install - As a Sass / SCSS partial
 
 ```scss
 @import "partials/minimal-grid";
 ```
 
-## How to use
+#### How to use
 1. Open _minimal-grid.scss
 2. Set your breakpoints (pixel values are converted to ems)
 
@@ -70,9 +70,9 @@ bower install minimal-grid
 
 **This is very much a work in progress & pull requests welcome**
 
-### Changelog:
-#### 1.0.1
-* Fixed typo in xlarge breakpoint
+#### Changelog:
+* 1.0.1 : Fixed typo in xlarge breakpoint
+* 1.0.0 : Inital Commit
 
-#### 1.0.0
-* Inital Commit
+#### Open Source : License
+* MIT License
