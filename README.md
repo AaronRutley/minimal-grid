@@ -16,7 +16,7 @@
     bower install minimal-grid
     ```
 
-### How to install - As a partial
+### How to install - As a Sass / SCSS partial
 
     ```scss
     @import "partials/minimal-grid";
