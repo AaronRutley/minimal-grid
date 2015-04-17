@@ -74,5 +74,5 @@ bower install minimal-grid
 * 1.0.1 : Fixed typo in xlarge breakpoint
 * 1.0.0 : Inital Commit
 
-#### Open Source : License
+#### License
 * MIT License
