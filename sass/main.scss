@@ -13,26 +13,46 @@ example page layout
 --------------------------------------------------------------*/
 .your-wrapper-here {
     background: #ccc;
+    padding:10px 0;
 
     .your-container-here {
-    @extend %grid-container;
+        @extend %grid-container;
+        max-width:1200px;
     }
     .content-col {
+        @extend %grid-block-collapse;
         @include grid(100);
         @include breakpoint(from-small) {
             @include grid(50);
         }
         @include breakpoint(from-medium) {
-            @include grid(70);
+            @include grid(75);
         }
     }
+
+    .example-item {
+        @extend %grid-block;
+        @include grid(33);
+        background:#283A4C;
+        color: #FFF;
+        text-align:center;
+        border:10px solid #FFF;
+        margin-top:10px;
+    }
     .sidebar {
+        @extend %grid-block-collapse;
+        padding:0;
+
         @include grid(100);
         @include breakpoint(from-small) {
             @include grid(50);
         }
         @include breakpoint(from-medium) {
-            @include grid(30);
+            @include grid(25);
+        }
+
+        p {
+            background: #283A4C;
         }
     }
 }

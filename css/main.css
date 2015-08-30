@@ -17,12 +17,18 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /*--------------------------------------------------------------
 Minimal Grid
+Author: AaronRutley
+Version: 1.0.1
+Github: https://github.com/AaronRutley/minimal-grid
+
 --------------------------------------------------------------*/
 *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .your-wrapper-here .your-container-here:after, .your-container-class-here:after, .promo-container:after, .another-promo-container:after, .example-gallery-block:after { content: ""; display: table; clear: both; }
 
-.your-wrapper-here .your-container-here > section, .your-container-class-here > section, .promo-container > section, .another-promo-container > section, .example-gallery-block > li { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
+.your-wrapper-here .your-container-here > section, .your-container-class-here > section, .promo-container > section, .another-promo-container > section, .example-gallery-block > li, .your-wrapper-here .example-item { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
+
+.your-wrapper-here .content-col, .your-wrapper-here .sidebar { display: inline-block; float: left; }
 
 .your-wrapper-here .your-container-here, .your-container-class-here, .promo-container { max-width: 1200px; margin: 0 auto; }
 
@@ -35,13 +41,16 @@ Minimal Grid
 /*--------------------------------------------------------------
 example page layout
 --------------------------------------------------------------*/
-.your-wrapper-here { background: #ccc; }
+.your-wrapper-here { background: #ccc; padding: 10px 0; }
+.your-wrapper-here .your-container-here { max-width: 1200px; }
 .your-wrapper-here .content-col { width: 100%; }
 @media only screen and (min-width: 25.625em) { .your-wrapper-here .content-col { width: 50%; } }
-@media only screen and (min-width: 50em) { .your-wrapper-here .content-col { width: 70%; } }
-.your-wrapper-here .sidebar { width: 100%; }
+@media only screen and (min-width: 50em) { .your-wrapper-here .content-col { width: 75%; } }
+.your-wrapper-here .example-item { width: 33.333333%; background: #283A4C; color: #FFF; text-align: center; border: 10px solid #FFF; margin-top: 10px; }
+.your-wrapper-here .sidebar { padding: 0; width: 100%; }
 @media only screen and (min-width: 25.625em) { .your-wrapper-here .sidebar { width: 50%; } }
-@media only screen and (min-width: 50em) { .your-wrapper-here .sidebar { width: 30%; } }
+@media only screen and (min-width: 50em) { .your-wrapper-here .sidebar { width: 25%; } }
+.your-wrapper-here .sidebar p { background: #283A4C; }
 
 /*--------------------------------------------------------------
 Example semantic row
@@ -92,7 +101,7 @@ Example semantic row
   .your-container-class-here .such-semantic :after { content: "50%"; } }
 .your-container-class-here .many-options { width: 100%; }
 .your-container-class-here .many-options :after { content: "100%"; }
-.your-container-class-here .im-one-thid { width: 33.33%; }
+.your-container-class-here .im-one-thid { width: 33.333333%; }
 .your-container-class-here .im-one-thid :after { content: "33.33%"; }
 .your-container-class-here .im-15 { width: 15%; }
 .your-container-class-here .im-15 :after { content: "15%"; }
@@ -117,17 +126,17 @@ promo examples
 .promo-container { max-width: 1280px; }
 .promo-container .promo { width: 50%; }
 .promo-container .promo :after { content: "50%"; }
-@media only screen and (min-width: 50em) { .promo-container .promo { width: 33.33%; }
+@media only screen and (min-width: 50em) { .promo-container .promo { width: 33.333333%; }
   .promo-container .promo :after { content: "33.33%"; } }
-@media only screen and (min-width: 75em) { .promo-container .promo { width: 16.66%; }
+@media only screen and (min-width: 75em) { .promo-container .promo { width: 16.666666%; }
   .promo-container .promo :after { content: "16.66%"; } }
 
 /*--------------------------------------------------------------
 gallery block example
 --------------------------------------------------------------*/
 .example-gallery-block li { width: 50%; }
-@media only screen and (min-width: 50em) { .example-gallery-block li { width: 33.33%; } }
-@media only screen and (min-width: 75em) { .example-gallery-block li { width: 16.66%; } }
+@media only screen and (min-width: 50em) { .example-gallery-block li { width: 33.333333%; } }
+@media only screen and (min-width: 75em) { .example-gallery-block li { width: 16.666666%; } }
 
 /*--------------------------------------------------------------
 collapse examples
@@ -135,9 +144,9 @@ collapse examples
 .another-promo-container { max-width: 1180px; }
 .another-promo-container .promo { width: 50%; }
 .another-promo-container .promo :after { content: "50%"; }
-@media only screen and (min-width: 50em) { .another-promo-container .promo { width: 33.33%; }
+@media only screen and (min-width: 50em) { .another-promo-container .promo { width: 33.333333%; }
   .another-promo-container .promo :after { content: "33.33%"; } }
-@media only screen and (min-width: 75em) { .another-promo-container .promo { width: 16.66%; }
+@media only screen and (min-width: 75em) { .another-promo-container .promo { width: 16.666666%; }
   .another-promo-container .promo :after { content: "16.66%"; } }
 
 /*--------------------------------------------------------------
