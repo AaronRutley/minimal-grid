@@ -16,163 +16,260 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 
 /*--------------------------------------------------------------
-Minimal Grid
-Author: AaronRutley
-Version: 1.0.1
+Minimal Grid by @aaronrutley
+Version: 2.0.0
 Github: https://github.com/AaronRutley/minimal-grid
-
 --------------------------------------------------------------*/
-*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-
-.your-wrapper-here .your-container-here:after, .your-container-class-here:after, .promo-container:after, .another-promo-container:after, .example-gallery-block:after { content: ""; display: table; clear: both; }
-
-.your-wrapper-here .your-container-here > section, .your-container-class-here > section, .promo-container > section, .another-promo-container > section, .example-gallery-block > li, .your-wrapper-here .example-item { padding-left: 10px; padding-right: 10px; display: inline-block; float: left; }
-
-.your-wrapper-here .content-col, .your-wrapper-here .sidebar { display: inline-block; float: left; }
-
-.your-wrapper-here .your-container-here, .your-container-class-here, .promo-container { max-width: 1200px; margin: 0 auto; }
-
-.another-promo-container { max-width: 1200px; margin: 0 auto; }
-.another-promo-container > section { padding: 0; }
-
-.example-gallery-block { max-width: 1200px; padding: 5px; margin: 0 auto; }
-.example-gallery-block > li { list-style: none; margin: 0; padding: 5px; }
+*, *:before, *:after { box-sizing: border-box; }
 
 /*--------------------------------------------------------------
 example page layout
 --------------------------------------------------------------*/
-.your-wrapper-here { background: #ccc; padding: 10px 0; }
-.your-wrapper-here .your-container-here { max-width: 1200px; }
-.your-wrapper-here .content-col { width: 100%; }
-@media only screen and (min-width: 25.625em) { .your-wrapper-here .content-col { width: 50%; } }
-@media only screen and (min-width: 50em) { .your-wrapper-here .content-col { width: 75%; } }
-.your-wrapper-here .example-item { width: 33.333333%; background: #283A4C; color: #FFF; text-align: center; border: 10px solid #FFF; margin-top: 10px; }
-.your-wrapper-here .sidebar { padding: 0; width: 100%; }
-@media only screen and (min-width: 25.625em) { .your-wrapper-here .sidebar { width: 50%; } }
-@media only screen and (min-width: 50em) { .your-wrapper-here .sidebar { width: 25%; } }
-.your-wrapper-here .sidebar p { background: #283A4C; }
+.container { max-width: 1180px; margin: 0 auto; }
+
+.container:after { content: ""; display: table; clear: both; }
+
+.container .content-col { display: inline-block; float: left; padding-left: 0; padding-right: 0; width: 100%; }
+
+@media only screen and (min-width: 26.25em) { .container .content-col { width: 50%; } }
+
+@media only screen and (min-width: 50em) { .container .content-col { width: 75%; } }
+
+.container .content-col p { background: #3d556d; }
+
+.container .sidebar { display: inline-block; float: left; padding-left: 0; padding-right: 0; width: 100%; }
+
+@media only screen and (min-width: 26.25em) { .container .sidebar { width: 50%; } }
+
+@media only screen and (min-width: 50em) { .container .sidebar { width: 25%; } }
+
+.container .sidebar p { background: #283A4C; }
 
 /*--------------------------------------------------------------
 Example semantic row
 --------------------------------------------------------------*/
-.your-container-class-here .classes { width: 30%; }
+.your-container-class-here { max-width: 1200px; margin: 0 auto; }
+
+.your-container-class-here:after { content: ""; display: table; clear: both; }
+
+.your-container-class-here > div { margin-top: 10px; margin-bottom: 10px; }
+
+.your-container-class-here .classes { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 30%; }
+
 .your-container-class-here .classes :after { content: "30%"; }
-@media only screen and (min-width: 25.625em) { .your-container-class-here .classes { width: 20%; }
+
+@media only screen and (min-width: 26.25em) { .your-container-class-here .classes { width: 20%; }
   .your-container-class-here .classes :after { content: "20%"; } }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .classes { width: 10%; }
   .your-container-class-here .classes :after { content: "10%"; } }
-.your-container-class-here .can { width: 70%; }
+
+.your-container-class-here .can { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 70%; }
+
 .your-container-class-here .can :after { content: "70%"; }
-@media only screen and (min-width: 25.625em) { .your-container-class-here .can { width: 80%; }
+
+@media only screen and (min-width: 26.25em) { .your-container-class-here .can { width: 80%; }
   .your-container-class-here .can :after { content: "80%"; } }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .can { width: 90%; }
   .your-container-class-here .can :after { content: "90%"; } }
-.your-container-class-here .be { width: 100%; }
+
+.your-container-class-here .be { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 100%; }
+
 .your-container-class-here .be :after { content: "100%"; }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .be { width: 20%; }
   .your-container-class-here .be :after { content: "20%"; } }
-.your-container-class-here .responsive { width: 100%; }
+
+.your-container-class-here .responsive { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 100%; }
+
 .your-container-class-here .responsive :after { content: "100%"; }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .responsive { width: 80%; }
   .your-container-class-here .responsive :after { content: "80%"; } }
-.your-container-class-here .and { width: 60%; }
+
+.your-container-class-here .and { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 60%; }
+
 .your-container-class-here .and :after { content: "60%"; }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .and { width: 30%; }
   .your-container-class-here .and :after { content: "30%"; } }
-.your-container-class-here .semantic { width: 40%; }
+
+.your-container-class-here .semantic { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 40%; }
+
 .your-container-class-here .semantic :after { content: "40%"; }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .semantic { width: 70%; }
   .your-container-class-here .semantic :after { content: "70%"; } }
-.your-container-class-here .very-class { width: 40%; }
+
+.your-container-class-here .very-class { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 40%; }
+
 .your-container-class-here .very-class :after { content: "40%"; }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .very-class { width: 40%; }
   .your-container-class-here .very-class :after { content: "40%"; } }
-.your-container-class-here .much-wow { width: 60%; }
+
+.your-container-class-here .much-wow { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 60%; }
+
 .your-container-class-here .much-wow :after { content: "60%"; }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .much-wow { width: 60%; }
   .your-container-class-here .much-wow :after { content: "60%"; } }
-.your-container-class-here .so-responsive { width: 50%; }
+
+.your-container-class-here .so-responsive { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 50%; }
+
 .your-container-class-here .so-responsive :after { content: "50%"; }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .so-responsive { width: 50%; }
   .your-container-class-here .so-responsive :after { content: "50%"; } }
-.your-container-class-here .such-semantic { width: 50%; }
+
+.your-container-class-here .such-semantic { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 50%; }
+
 .your-container-class-here .such-semantic :after { content: "50%"; }
+
 @media only screen and (min-width: 50em) { .your-container-class-here .such-semantic { width: 50%; }
   .your-container-class-here .such-semantic :after { content: "50%"; } }
-.your-container-class-here .many-options { width: 100%; }
+
+.your-container-class-here .many-options { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 100%; }
+
 .your-container-class-here .many-options :after { content: "100%"; }
-.your-container-class-here .im-one-thid { width: 33.333333%; }
+
+.your-container-class-here .im-one-thid { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 33.333333%; }
+
 .your-container-class-here .im-one-thid :after { content: "33.33%"; }
-.your-container-class-here .im-15 { width: 15%; }
+
+.your-container-class-here .im-15 { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 15%; }
+
 .your-container-class-here .im-15 :after { content: "15%"; }
-.your-container-class-here .im-85 { width: 85%; }
+
+.your-container-class-here .im-85 { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 85%; }
+
 .your-container-class-here .im-85 :after { content: "85%"; }
-.your-container-class-here .im-25 { width: 25%; }
+
+.your-container-class-here .im-25 { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 25%; }
+
 .your-container-class-here .im-25 :after { content: "25%"; }
-.your-container-class-here .im-75 { width: 75%; }
+
+.your-container-class-here .im-75 { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 75%; }
+
 .your-container-class-here .im-75 :after { content: "75%"; }
-.your-container-class-here .im-35 { width: 35%; }
+
+.your-container-class-here .im-35 { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 35%; }
+
 .your-container-class-here .im-35 :after { content: "35%"; }
-.your-container-class-here .im-65 { width: 65%; }
+
+.your-container-class-here .im-65 { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 65%; }
+
 .your-container-class-here .im-65 :after { content: "65%"; }
-.your-container-class-here .im-45 { width: 45%; }
+
+.your-container-class-here .im-45 { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 45%; }
+
 .your-container-class-here .im-45 :after { content: "45%"; }
-.your-container-class-here .im-55 { width: 55%; }
+
+.your-container-class-here .im-55 { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 55%; }
+
 .your-container-class-here .im-55 :after { content: "55%"; }
 
 /*--------------------------------------------------------------
 promo examples
 --------------------------------------------------------------*/
-.promo-container { max-width: 1280px; }
-.promo-container .promo { width: 50%; }
+.promo-container { max-width: 1200px; margin: 0 auto; max-width: 1280px; }
+
+.promo-container:after { content: ""; display: table; clear: both; }
+
+.promo-container .promo { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 50%; }
+
 .promo-container .promo :after { content: "50%"; }
+
 @media only screen and (min-width: 50em) { .promo-container .promo { width: 33.333333%; }
   .promo-container .promo :after { content: "33.33%"; } }
+
 @media only screen and (min-width: 75em) { .promo-container .promo { width: 16.666666%; }
   .promo-container .promo :after { content: "16.66%"; } }
 
 /*--------------------------------------------------------------
 gallery block example
 --------------------------------------------------------------*/
-.example-gallery-block li { width: 50%; }
+.example-gallery-block { max-width: 1200px; padding: 0; margin: 0 auto; padding-top: 10px; padding-bottom: 20px; }
+
+.example-gallery-block:after { content: ""; display: table; clear: both; }
+
+.example-gallery-block li { display: inline-block; float: left; list-style: none; margin: 0; }
+
+.example-gallery-block li { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; width: 50%; }
+
 @media only screen and (min-width: 50em) { .example-gallery-block li { width: 33.333333%; } }
+
 @media only screen and (min-width: 75em) { .example-gallery-block li { width: 16.666666%; } }
 
 /*--------------------------------------------------------------
 collapse examples
 --------------------------------------------------------------*/
-.another-promo-container { max-width: 1180px; }
-.another-promo-container .promo { width: 50%; }
+.another-promo-container { max-width: 1180px; margin: 0 auto; max-width: 1180px; }
+
+.another-promo-container:after { content: ""; display: table; clear: both; }
+
+.another-promo-container .promo { display: inline-block; float: left; padding-left: 0; padding-right: 0; width: 100%; width: 50%; }
+
 .another-promo-container .promo :after { content: "50%"; }
+
 @media only screen and (min-width: 50em) { .another-promo-container .promo { width: 33.333333%; }
   .another-promo-container .promo :after { content: "33.33%"; } }
+
 @media only screen and (min-width: 75em) { .another-promo-container .promo { width: 16.666666%; }
   .another-promo-container .promo :after { content: "16.66%"; } }
+
+.promo-list:after { content: ""; display: table; clear: both; }
+
+.promo-list__item { display: inline-block; float: left; padding-left: 10px; padding-right: 10px; width: 100%; }
+
+@media only screen and (min-width: 50em) { .promo-list__item { width: 33.333333%; } }
+
+.promo-list__item p { background: #222; }
+
+.promo-list-wrap { background: #f1f1f1; padding: 10px 0; }
 
 /*--------------------------------------------------------------
 styles just for the demo
 --------------------------------------------------------------*/
-.title { font-size: 0.875em; text-align: center; width: 100%; line-height: 20px; margin-top: 10px; font-family: Futura, "Trebuchet MS", Arial, sans-serif; }
+.title { font-size: 0.875em; text-align: center; width: 100%; line-height: 40px; margin-bottom: 10px; font-family: Futura, "Trebuchet MS", Arial, sans-serif; color: #FFF; background: #673ab7; }
+
+@media only screen and (min-width: 26.25em) { .title { background: #9c27b0; } }
+
+@media only screen and (min-width: 50em) { .title { background: #3f51b5; } }
+
+@media only screen and (min-width: 75em) { .title { background: #2980b9; } }
+
+@media only screen and (min-width: 100em) { .title { background: #9c27b0; } }
 
 .title:after { content: "mobile frist "; }
-@media only screen and (min-width: 25.625em) { .title:after { content: "from small breakpoint"; } }
+
+@media only screen and (min-width: 26.25em) { .title:after { content: "from small breakpoint"; } }
+
 @media only screen and (min-width: 50em) { .title:after { content: "from medium breakpoint"; } }
+
 @media only screen and (min-width: 75em) { .title:after { content: "from large breakpoint"; } }
+
 @media only screen and (min-width: 100em) { .title:after { content: "from xlarge breakpoint"; } }
 
 p { background: #3498db; color: #fff; text-align: center; line-height: 42px; font-size: 0.875em; display: inline-block; width: 100%; font-family: Futura, "Trebuchet MS", Arial, sans-serif; }
 
-.your-container-class-here section { margin-top: 10px; }
+.your-container-class-here div { margin-top: 10px; }
 
-.promo-container section { background: #8e44ad; margin-top: 10px; }
-.promo-container section p { background: #9b59b6; }
+.promo-container div { background: #8e44ad; margin-top: 10px; }
+
+.promo-container div p { background: #9b59b6; }
 
 .another-promo-container { margin-top: 10px; }
+
 .another-promo-container p { background: none; }
-.another-promo-container section:nth-child(odd) { background: #1abc9c; }
-.another-promo-container section:nth-child(even) { background: #16a085; }
+
+.another-promo-container div:nth-child(odd) { background: #1abc9c; }
+
+.another-promo-container div:nth-child(even) { background: #16a085; }
 
 .your-wrapper-here { margin-top: 10px; }
+
 .your-wrapper-here p { background: #34495e; }
 
 .your-container-here span { width: 100%; display: none; text-align: center; clear: both; font-size: 12px; line-height: 20px; color: #777; }

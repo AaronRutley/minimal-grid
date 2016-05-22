@@ -1,10 +1,20 @@
 {
-  "name": "grid",
-  "version": "1.0.0",
-  "description": "grid",
+  "name": "minimal-grid",
+  "version": "2.0.0",
+  "description": "A minimal (Sass based) grid system for mobile first responsive design",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/AaronRutley/minimal-grid/"
+  },
   "devDependencies": {
-    "grunt": "^0.4.4",
-    "grunt-contrib-compass": "^0.7.2",
-    "grunt-contrib-watch": "^0.6.1"
+	"gulp": "^3.9.0",
+	"gulp-autoprefixer": "^2.3.1",
+	"gulp-imagemin": "^2.2.1",
+	"gulp-notify": "^2.2.0",
+	"gulp-plumber": "^1.0.1",
+	"gulp-sass": "^2.0.4",
+	"gulp-uglify": "^1.2.0"
   }
 }

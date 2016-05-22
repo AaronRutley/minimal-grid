@@ -3,7 +3,7 @@
 @import "partials/minimal-grid";
 
 // Project sepecific / Design / Content Based Breakpoints to overwrite defaults
-$breakpoint-small:  em(410);
+$breakpoint-small:  em(420);
 $breakpoint-medium: em(800);
 $breakpoint-large:  em(1200);
 $breakpoint-xlarge: em(1600);
@@ -11,190 +11,208 @@ $breakpoint-xlarge: em(1600);
 /*--------------------------------------------------------------
 example page layout
 --------------------------------------------------------------*/
-.your-wrapper-here {
-    background: #ccc;
-    padding:10px 0;
 
-    .your-container-here {
-        @extend %grid-container;
-        max-width:1200px;
-    }
-    .content-col {
-        @extend %grid-block-collapse;
-        @include grid(100);
-        @include breakpoint(from-small) {
-            @include grid(50);
-        }
-        @include breakpoint(from-medium) {
-            @include grid(75);
-        }
-    }
+.container {
+	// set the grid contaner
+	@include grid-container-collapse;
 
-    .example-item {
-        @extend %grid-block;
-        @include grid(33);
-        background:#283A4C;
-        color: #FFF;
-        text-align:center;
-        border:10px solid #FFF;
-        margin-top:10px;
-    }
-    .sidebar {
-        @extend %grid-block-collapse;
-        padding:0;
+	.content-col {
+		// set this a grid item with on padding
+		@include grid-item-collapse;
+		@include breakpoint(from-small) {
+			@include grid(50);
+		}
+		@include breakpoint(from-medium) {
+			@include grid(75);
+		}
 
-        @include grid(100);
-        @include breakpoint(from-small) {
-            @include grid(50);
-        }
-        @include breakpoint(from-medium) {
-            @include grid(25);
-        }
+		p {
+			background: #3d556d;
+		}
+	}
 
-        p {
-            background: #283A4C;
-        }
-    }
+	.sidebar {
+		// set this a grid item with on padding
+		@include grid-item-collapse;
+
+		// from the small breakpoint set this item to 50% width
+		@include breakpoint(from-small) {
+			@include grid(50);
+		}
+
+		// from the medium breakpoint set this item to 25% width
+		@include breakpoint(from-medium) {
+			@include grid(25);
+		}
+
+		p {
+			background: #283A4C;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
 Example semantic row
 --------------------------------------------------------------*/
 .your-container-class-here {
-    @extend %grid-container;
+	@include grid-container;
 
-    .classes {
-        @include grid(30);
-        :after { content: "30%"; }
-        @include breakpoint(from-small) {
-            @include grid(20);
-            :after { content: "20%"; }
-        }
-        @include breakpoint(from-medium) {
-            @include grid(10);
-            :after { content: "10%"; }
-        }
-    }
+	> div {
+		margin-top:10px;
+		margin-bottom: 10px;
+	}
+	.classes {
+		@include grid-item;
+		@include grid(30);
+		:after { content: "30%"; }
+		@include breakpoint(from-small) {
+			@include grid(20);
+			:after { content: "20%"; }
+		}
+		@include breakpoint(from-medium) {
+			@include grid(10);
+			:after { content: "10%"; }
+		}
+	}
 
-    .can {
-        @include grid(70);
-        :after { content: "70%"; }
-        @include breakpoint(from-small) {
-            @include grid(80);
-            :after { content: "80%"; }
-        }
-        @include breakpoint(from-medium) {
-            @include grid(90);
-            :after { content: "90%"; }
-        }
-    }
+	.can {
+		@include grid-item;
+		@include grid(70);
+		:after { content: "70%"; }
+		@include breakpoint(from-small) {
+			@include grid(80);
+			:after { content: "80%"; }
+		}
+		@include breakpoint(from-medium) {
+			@include grid(90);
+			:after { content: "90%"; }
+		}
+	}
 
-    .be {
-        @include grid(100);
-        :after { content: "100%"; }
-        @include breakpoint(from-medium) {
-            @include grid(20);
-            :after { content: "20%"; }
-        }
-    }
-    .responsive {
-        @include grid(100);
-        :after { content: "100%"; }
-        @include breakpoint(from-medium) {
-            @include grid(80);
-            :after { content: "80%"; }
-        }
-    }
-    .and {
-        @include grid(60);
-        :after { content: "60%"; }
-        @include breakpoint(from-medium) {
-            @include grid(30);
-            :after { content: "30%"; }
-        }
-    }
-    .semantic {
-        @include grid(40);
-        :after { content: "40%"; }
-        @include breakpoint(from-medium) {
-            @include grid(70);
-            :after { content: "70%"; }
-        }
-    }
-    .very-class {
-        @include grid(40);
-        :after { content: "40%"; }
-        @include breakpoint(from-medium) {
-            @include grid(40);
-            :after { content: "40%"; }
-        }
-    }
-    .much-wow {
-        @include grid(60);
-        :after { content: "60%"; }
-        @include breakpoint(from-medium) {
-            @include grid(60);
-            :after { content: "60%"; }
-        }
-    }
-    .so-responsive {
-        @include grid(50);
-        :after { content: "50%"; }
-        @include breakpoint(from-medium) {
-            @include grid(50);
-            :after { content: "50%"; }
-        }
-    }
-    .such-semantic {
-        @include grid(50);
-        :after { content: "50%"; }
-        @include breakpoint(from-medium) {
-            @include grid(50);
-            :after { content: "50%"; }
-        }
-    }
-    .many-options {
-        @include grid(100);
-        :after { content: "100%"; }
-    }
+	.be {
+		@include grid-item;
+		@include grid(100);
+		:after { content: "100%"; }
+		@include breakpoint(from-medium) {
+			@include grid(20);
+			:after { content: "20%"; }
+		}
+	}
+	.responsive {
+		@include grid-item;
+		@include grid(100);
+		:after { content: "100%"; }
+		@include breakpoint(from-medium) {
+			@include grid(80);
+			:after { content: "80%"; }
+		}
+	}
+	.and {
+		@include grid-item;
+		@include grid(60);
+		:after { content: "60%"; }
+		@include breakpoint(from-medium) {
+			@include grid(30);
+			:after { content: "30%"; }
+		}
+	}
+	.semantic {
+		@include grid-item;
+		@include grid(40);
+		:after { content: "40%"; }
+		@include breakpoint(from-medium) {
+			@include grid(70);
+			:after { content: "70%"; }
+		}
+	}
+	.very-class {
+		@include grid-item;
+		@include grid(40);
+		:after { content: "40%"; }
+		@include breakpoint(from-medium) {
+			@include grid(40);
+			:after { content: "40%"; }
+		}
+	}
+	.much-wow {
+		@include grid-item;
+		@include grid(60);
+		:after { content: "60%"; }
+		@include breakpoint(from-medium) {
+			@include grid(60);
+			:after { content: "60%"; }
+		}
+	}
+	.so-responsive {
+		@include grid-item;
+		@include grid(50);
+		:after { content: "50%"; }
+		@include breakpoint(from-medium) {
+			@include grid(50);
+			:after { content: "50%"; }
+		}
+	}
+	.such-semantic {
+		@include grid-item;
+		@include grid(50);
+		:after { content: "50%"; }
+		@include breakpoint(from-medium) {
+			@include grid(50);
+			:after { content: "50%"; }
+		}
+	}
+	.many-options {
+		@include grid-item;
+		@include grid(100);
+		:after { content: "100%"; }
+	}
 
-    .im-one-thid {
-        @include grid(33);
-        :after { content: "33.33%"; }
-    }
+	.im-one-thid {
+		@include grid-item;
+		@include grid(33);
+		:after { content: "33.33%"; }
+	}
 
-    .im-15 {
-         @include grid(15);
-        :after { content: "15%"; }
-    }
-    .im-85 {
-         @include grid(85);
-        :after { content: "85%"; }
-    }
-    .im-25 {
-         @include grid(25);
-        :after { content: "25%"; }
-    }
-    .im-75 {
-         @include grid(75);
-        :after { content: "75%"; }
-    }
-    .im-35 {
-         @include grid(35);
-        :after { content: "35%"; }
-    }
-    .im-65 {
-         @include grid(65);
-        :after { content: "65%"; }
-    }
-    .im-45 {
-         @include grid(45);
-        :after { content: "45%"; }
-    }
-    .im-55 {
-         @include grid(55);
-        :after { content: "55%"; }
-    }
+	.im-15 {
+		@include grid-item;
+		 @include grid(15);
+		:after { content: "15%"; }
+	}
+	.im-85 {
+		@include grid-item;
+		@include grid(85);
+		:after { content: "85%"; }
+	}
+	.im-25 {
+		@include grid-item;
+		@include grid(25);
+		:after { content: "25%"; }
+	}
+	.im-75 {
+		@include grid-item;
+		 @include grid(75);
+		:after { content: "75%"; }
+	}
+	.im-35 {
+		@include grid-item;
+		@include grid(35);
+		:after { content: "35%"; }
+	}
+	.im-65 {
+		@include grid-item;
+		@include grid(65);
+		:after { content: "65%"; }
+	}
+	.im-45 {
+		@include grid-item;
+		 @include grid(45);
+		:after { content: "45%"; }
+	}
+	.im-55 {
+		@include grid-item;
+		@include grid(55);
+		:after { content: "55%"; }
+	}
 
 }
 
@@ -202,147 +220,188 @@ Example semantic row
 promo examples
 --------------------------------------------------------------*/
 .promo-container {
-    @extend %grid-container;
-    max-width:1280px;
+	@include grid-container;
+	max-width:1280px;
 
-    .promo {
-        @include grid(50);
-        :after { content: "50%"; }
-        @include breakpoint(from-medium) {
-            @include grid(33);
-            :after { content: "33.33%"; }
-        }
-        @include breakpoint(from-large) {
-            @include grid(16);
-            :after { content: "16.66%"; }
-        }
-    }
+	.promo {
+		@include grid-item;
+		@include grid(50);
+		:after { content: "50%"; }
+		@include breakpoint(from-medium) {
+			@include grid(33);
+			:after { content: "33.33%"; }
+		}
+		@include breakpoint(from-large) {
+			@include grid(16);
+			:after { content: "16.66%"; }
+		}
+	}
 }
 
 /*--------------------------------------------------------------
 gallery block example
 --------------------------------------------------------------*/
 .example-gallery-block {
-    @extend %block-container;
+	@include grid-list;
+	padding-top:10px;
+	padding-bottom: 20px;
 
-    li {
-        @include grid(50);
-        @include breakpoint(from-medium) {
-            @include grid(33);
-        }
-        @include breakpoint(from-large) {
-            @include grid(16);
-        }
-    }
+	li {
+		@include grid-item;
+		@include grid(50);
+		@include breakpoint(from-medium) {
+			@include grid(33);
+		}
+		@include breakpoint(from-large) {
+			@include grid(16);
+		}
+	}
 }
 
 /*--------------------------------------------------------------
 collapse examples
 --------------------------------------------------------------*/
 .another-promo-container {
-    @extend %grid-container-collapse;
-    max-width:1180px;
+	@include grid-container-collapse;
+	max-width:1180px;
 
-    .promo {
-        @include grid(50);
-        :after { content: "50%"; }
-        @include breakpoint(from-medium) {
-            @include grid(33);
-            :after { content: "33.33%"; }
-        }
-        @include breakpoint(from-large) {
-            @include grid(16);
-            :after { content: "16.66%"; }
-        }
-    }
+	.promo {
+		@include grid-item-collapse;
+		@include grid(50);
+		:after { content: "50%"; }
+		@include breakpoint(from-medium) {
+			@include grid(33);
+			:after { content: "33.33%"; }
+		}
+		@include breakpoint(from-large) {
+			@include grid(16);
+			:after { content: "16.66%"; }
+		}
+	}
+}
+
+.promo-list {
+	@include clearfix;
+
+	&__item {
+		@include grid-item;
+		@include breakpoint(from-medium) {
+			@include grid(33);
+		}
+
+		p {
+			background: #222;
+		}
+	}
+
+	&-wrap {
+		background: #f1f1f1;
+		padding:10px 0;
+	}
 }
 
 /*--------------------------------------------------------------
 styles just for the demo
 --------------------------------------------------------------*/
 .title {
-    font-size: em(14);
-    text-align: center;
-    width: 100%;
-    line-height: 20px;
-    margin-top: 10px;
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-size: em(14);
+	text-align: center;
+	width: 100%;
+	line-height: 40px;
+	margin-bottom: 10px;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	color:#FFF;
+	background: #673ab7;
+	@include breakpoint(from-small) {
+		background: #9c27b0;
+	}
+	@include breakpoint(from-medium) {
+		background: #3f51b5;
+	}
+	@include breakpoint(from-large) {
+		background: #2980b9;
+	}
+	@include breakpoint(from-xlarge) {
+		background: #9c27b0;
+	}
 }
 .title:after {
-    content: "mobile frist ";
-    @include breakpoint(from-small) {
-        content: "from small breakpoint";
-    }
-    @include breakpoint(from-medium) {
-        content: "from medium breakpoint";
-    }
-    @include breakpoint(from-large) {
-        content: "from large breakpoint";
-    }
-    @include breakpoint(from-xlarge) {
-        content: "from xlarge breakpoint";
-    }
+	content: "mobile frist ";
+	@include breakpoint(from-small) {
+		content: "from small breakpoint";
+	}
+	@include breakpoint(from-medium) {
+		content: "from medium breakpoint";
+	}
+	@include breakpoint(from-large) {
+		content: "from large breakpoint";
+	}
+	@include breakpoint(from-xlarge) {
+		content: "from xlarge breakpoint";
+	}
 }
 p {
-    background: #3498db;
-    color: #fff;
-    text-align: center;
-    line-height: 42px;
-    font-size: em(14);
-    display: inline-block;
-    width: 100%;
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	background: #3498db;
+	color: #fff;
+	text-align: center;
+	line-height: 42px;
+	font-size: em(14);
+	display: inline-block;
+	width: 100%;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .your-container-class-here {
-    section {
-        margin-top:10px;
-    }
+	div {
+		margin-top:10px;
+	}
 }
 
 .promo-container {
-    section {
-        background: #8e44ad;
-        margin-top: 10px;
-        p {
-            background: #9b59b6;
-        }
-    }
+	div {
+		background: #8e44ad;
+		margin-top: 10px;
+		p {
+			background: #9b59b6;
+		}
+	}
 }
 
 .another-promo-container {
-    margin-top:10px;
-    p {
-        background:none;
-    }
-    section:nth-child(odd) {
-        background: #1abc9c;
-    }
-    section:nth-child(even) {
-        background: #16a085;
-    }
+	margin-top:10px;
+	p {
+		background:none;
+	}
+	div:nth-child(odd) {
+		background: #1abc9c;
+	}
+	div:nth-child(even) {
+		background: #16a085;
+	}
 }
 
 .your-wrapper-here {
-    margin-top: 10px;
-    p {
-        background: #34495e;
-    }
+	margin-top: 10px;
+	p {
+		background: #34495e;
+	}
 }
 
 .your-container-here span {
-    width: 100%;
-    display: none;
-    text-align: center;
-    clear: both;
-    font-size: 12px;
-    line-height: 20px;
-    color: #777;
+	width: 100%;
+	display: none;
+	text-align: center;
+	clear: both;
+	font-size: 12px;
+	line-height: 20px;
+	color: #777;
 
  }
 
  .example-gallery-block img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
 }
+
+
