@@ -1,6 +1,7 @@
 # Minimal Grid v2.0.0
 > A minimal (Sass / Scss based) grid system for mobile first responsive design
-> Version 2 is a complete overhaul using mixins over extends, see the updated docs below.
+
+Version 2.0.0 is a complete overhaul using mixins over extends, see the updated docs below.
 
 #### Features
 * Percentage based (`@include grid(50)`  instead of `class="span_6"`)

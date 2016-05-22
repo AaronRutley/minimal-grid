@@ -2,3 +2,4 @@
 /.sass_cache/
 .DS_store
 .sass-cache
+.bower 
